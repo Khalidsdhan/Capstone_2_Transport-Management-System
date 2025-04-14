@@ -29,7 +29,7 @@ public class Admin {
 
     @Column(columnDefinition = "varchar(20) not null unique")
     @NotEmpty(message = "password must be not empty")
-    @Size(min = 8)
+    @Pattern(regexp="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")
     private String password;
 
     @Column(columnDefinition = "varchar(20) not null unique")
